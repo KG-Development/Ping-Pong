@@ -9,6 +9,11 @@ class Vector {
         float velocity;
 
         Vector() {};
+        Vector(int x, int y, float vel) {
+            this->x = x;
+            this->y = y;
+            this->velocity = vel;
+        };
         virtual ~Vector();
 
         int getX();

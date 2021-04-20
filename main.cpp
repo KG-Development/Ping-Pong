@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-    Vector vec;
+    Vector vec(3, 4, 0.0);
 
 
 
