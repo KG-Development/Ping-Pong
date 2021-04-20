@@ -1,9 +1,8 @@
 # depslib dependency file v1.0
-1618935750 source:c:\users\strobl\documents\github\ping-pong\main.cpp
+1618937212 source:c:\users\strobl\documents\github\ping-pong\main.cpp
 	<iostream>
-	<thread>
-	<windows.h>
-	<string>
+	"GameObject.h"
+	"Vector.h"
 
 1618937143 source:c:\users\kilia\desktop\projekte\ping-pong\main.cpp
 	<iostream>
@@ -18,5 +17,13 @@
 	"GameObject.h"
 
 1618937168 source:c:\users\kilia\desktop\projekte\ping-pong\src\vector.cpp
+	"Vector.h"
+
+1618937212 source:c:\users\strobl\documents\github\ping-pong\src\vector.cpp
+	"Vector.h"
+
+1618937962 c:\users\strobl\documents\github\ping-pong\include\vector.h
+
+1618938088 c:\users\strobl\documents\github\ping-pong\include\gameobject.h
 	"Vector.h"
 
