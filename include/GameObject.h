@@ -1,15 +1,14 @@
+#include "Vector.h"
+
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-#include "Vector.h"
-class GameObject
-{
+class GameObject {
     public:
-        GameObject(char sign, Vector::Vector pos);
-        virtual ~GameObject();
+        GameObject(char sign, Vector pos);
     private:
         char sign;
-        Vector::Vector position;
+        Vector position;
 };
 
 #endif // GAMEOBJECT_H

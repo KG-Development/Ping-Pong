@@ -1,11 +1,7 @@
 #include "GameObject.h"
+#include "Vector.h"
 
-GameObject::GameObject(char sign, Vector::Vector pos){
-    this->position = pos;
+GameObject::GameObject(char sign, Vector vec){
+    this->position = vec;
     this->sign = sign;
-}
-virtual GameObject::~GameObject(){
-
-    this->position = Vector::Vector(0, 0);
-    this->sign = ' ';
 }
