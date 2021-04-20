@@ -50,6 +50,10 @@ int Vector2d_multiply(Vector2d vec1, Vector2d vec2) {
     return vec.x + vec.y + vec.velocity;
 }
 
-void Vector2d::reverse() {
+void Vector2d::reverseX() {
     this->x *= -1;
+}
+
+void Vector2d::reverseY() {
+    this->y *= -1;
 }

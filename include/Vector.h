@@ -19,7 +19,8 @@ class Vector2d {
         void setY(int y);
         void setVelocity(float vel);
 
-        void reverse();
+        void reverseX();
+        void reverseY();
 
         void print();
 
