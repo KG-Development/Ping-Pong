@@ -34,3 +34,22 @@ void Vector2d::setVelocity(float vel) {
 void Vector2d::print() {
     std::cout << "X: " << this->x << "\nY: " << this->y << "\nSpeed: " << this->velocity << std::endl;
 }
+
+Vector2d Vector2d_add(Vector2d vec1, Vector2d vec2) {
+    Vector2d vec(vec1.x + vec2.x, vec1.y + vec2.y, 0.0);
+    return vec;
+}
+
+Vector2d Vector2d_sub(Vector2d vec1, Vector2d vec2) {
+    Vector2d vec(vec1.x - vec2.x, vec1.y - vec2.y, 0.0);
+    return vec;
+}
+
+int Vector2d_multiply(Vector2d vec1, Vector2d vec2) {
+    Vector2d vec(vec1.x * vec2.x, vec1.y * vec2.y, 0.0);
+    return vec.x + vec.y + vec.velocity;
+}
+
+void Vector2d::reverse() {
+    this->x *= -1;
+}

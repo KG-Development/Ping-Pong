@@ -19,6 +19,8 @@ class Vector2d {
         void setY(int y);
         void setVelocity(float vel);
 
+        void reverse();
+
         void print();
 
     protected:
@@ -26,5 +28,9 @@ class Vector2d {
     private:
 
 };
+
+Vector2d Vector2d_add(Vector2d vec1, Vector2d vec2);
+Vector2d Vector2d_sub(Vector2d vec1, Vector2d vec2);
+int Vector2d_multiply(Vector2d vec1, Vector2d vec2);
 
 #endif // VECTOR_H
