@@ -6,6 +6,10 @@
 class GameObject {
     public:
         GameObject(char sign, Vector2d pos);
+        GameObject(){}
+
+        Vector2d getPosition();
+        char getSign();
     private:
         char sign;
         Vector2d position;
