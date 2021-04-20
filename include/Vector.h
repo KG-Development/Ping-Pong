@@ -3,22 +3,30 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
-class Vector {
-    public:
-        int x, y;
-        Vector(int x, int y);
-        virtual ~Vector();
+namespace Vector {
+    class Vector {
+        public:
+            int x, y;
+            float velocity;
 
-        int getX();
-        int getY();
+            Vector(int x, int y, float velocity);
+            virtual ~Vector();
 
-        void setX(int x);
-        void setY(int y);
+            int getX();
+            int getY();
+            float getVelocity();
 
-    protected:
+            void setX(int x);
+            void setY(int y);
+            void setVelocity(float vel);
 
-    private:
+            void print();
 
-};
+        protected:
+
+        private:
+
+    };
+}
 
 #endif // VECTOR_H

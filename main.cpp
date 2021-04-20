@@ -5,9 +5,9 @@
 using namespace std;
 
 int main(){
-    Vector vec(1, 3);
+    Vector::Vector vec(1, 3, 0.0);
 
-    vec.setX(9);
 
-    cout << vec.getX() << endl << vec.getY();
+
+    vec.print();
 }
