@@ -1,35 +1,36 @@
 #include "Vector.h"
 #include <iostream>
 
-Vector::~Vector() {
-    this->x = 0;
-    this->y = 0;
-}
+Vector2d::Vector2d(int x, int y, float vel) {
+    this->x = x;
+    this->y = y;
+    this->velocity = vel;
+};
 
-int Vector::getX() {
+int Vector2d::getX() {
     return this->x;
 }
 
-int Vector::getY() {
+int Vector2d::getY() {
     return this->y;
 }
 
-void Vector::setX(int x) {
+void Vector2d::setX(int x) {
     this->x = x;
 }
 
-void Vector::setY(int y) {
+void Vector2d::setY(int y) {
     this->y = y;
 }
 
-float Vector::getVelocity() {
+float Vector2d::getVelocity() {
     return this->velocity;
 }
 
-void Vector::setVelocity(float vel) {
+void Vector2d::setVelocity(float vel) {
     this->velocity = vel;
 }
 
-void Vector::print() {
+void Vector2d::print() {
     std::cout << "X: " << this->x << "\nY: " << this->y << "\nSpeed: " << this->velocity << std::endl;
 }

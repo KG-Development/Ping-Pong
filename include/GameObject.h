@@ -5,10 +5,10 @@
 
 class GameObject {
     public:
-        GameObject(char sign, Vector pos);
+        GameObject(char sign, Vector2d pos);
     private:
         char sign;
-        Vector position;
+        Vector2d position;
 };
 
 #endif // GAMEOBJECT_H

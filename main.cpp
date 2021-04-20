@@ -5,8 +5,7 @@
 using namespace std;
 
 int main(){
-    Vector vec(3, 4, 0.0);
-
+    Vector2d vec(3, 4, 0.0);
 
 
     vec.print();
