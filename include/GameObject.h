@@ -9,6 +9,7 @@ class GameObject
 
     private:
         char sign;
+
 };
 
 #endif // GAMEOBJECT_H
