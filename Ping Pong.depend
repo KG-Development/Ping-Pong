@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1618935750 source:c:\users\strobl\documents\github\ping-pong\main.cpp
+	<iostream>
+	<thread>
+	<windows.h>
+	<string>
+
