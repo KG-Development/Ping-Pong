@@ -11,3 +11,11 @@ Vector2d GameObject::getPosition(){
 char GameObject::getSign(){
     return this->sign;
 }
+
+int GameObject::getX() {
+    return this->position.getX();
+}
+
+int GameObject::getY() {
+    return this->position.getY();
+}
