@@ -14,6 +14,7 @@ int main(){
     field.setObjectAtPosition(objPlayerLeft);
     field.setObjectAtPosition(objBall);
     field.setObjectAtPosition(objPlayerRight);
+
     field.printField();
 
     //vec.print();

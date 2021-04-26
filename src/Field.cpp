@@ -14,7 +14,7 @@ Field::~Field() {
 }
 
 void Field::setObjectAtPosition(GameObject &obj) {
-    if (obj.length > 1) {
+    if (obj.length > 1 || obj.width > 1) {
         this->setBigObject(obj);
         return;
     }
