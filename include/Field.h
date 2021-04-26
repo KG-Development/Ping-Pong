@@ -18,6 +18,7 @@ class Field {
     protected:
 
     private:
+        void setBigObject(GameObject obj);
         char field[MAXY][MAXX];
 };
 

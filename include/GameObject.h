@@ -7,9 +7,13 @@
 
 class GameObject {
     public:
-        GameObject(char sign, Vector2d pos);
+        int length;
+        int width;
+
+        GameObject(char sign, Vector2d pos, int length, int width);
         GameObject(){}
         Vector2d getPosition();
+
         char getSign();
 
         int getX();
@@ -19,12 +23,13 @@ class GameObject {
         int getPrevY();
 
         bool isPosChanged();
+        Vector2d position;
 
     private:
         bool posChanged;
 
         char sign;
-        Vector2d position;
+        //Vector2d position;
         Vector2d prevPosition;
 };
 
