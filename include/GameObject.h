@@ -15,9 +15,17 @@ class GameObject {
         int getX();
         int getY();
 
+        int getPrevX();
+        int getPrevY();
+
+        bool isPosChanged();
+
     private:
+        bool posChanged;
+
         char sign;
         Vector2d position;
+        Vector2d prevPosition;
 };
 
 #endif // GAMEOBJECT_H

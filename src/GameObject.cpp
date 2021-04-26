@@ -4,6 +4,8 @@
 GameObject::GameObject(char sign, Vector2d vec){
     this->position = vec;
     this->sign = sign;
+    this->prevPosition = vec;
+    this->posChanged = false;
 }
 Vector2d GameObject::getPosition(){
     return this->position;
@@ -18,4 +20,16 @@ int GameObject::getX() {
 
 int GameObject::getY() {
     return this->position.getY();
+}
+
+int GameObject::getPrevX() {
+    return this->prevPosition.getX();
+}
+
+int GameObject::getPrevY() {
+    return this->prevPosition.getY();
+}
+
+bool GameObject::isPosChanged() {
+    return this->posChanged;
 }

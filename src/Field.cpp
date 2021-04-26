@@ -15,6 +15,9 @@ Field::~Field() {
 
 void Field::setObjectAtPosition(GameObject &obj) {
     this->field[obj.getY()][obj.getX()] = obj.getSign();
+    if (obj.isPosChanged()) {
+        this->field[obj.getPrevY()][obj.getPrevX()] = 0;
+    }
 }
 
 void Field::printField() {
