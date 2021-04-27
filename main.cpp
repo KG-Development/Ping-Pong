@@ -4,6 +4,7 @@
 #include "Field.h"
 #include "Input.h"
 #include <windows.h>
+#include "myconio.h"
 
 using namespace std;
 
@@ -28,6 +29,7 @@ int main(){
     //Demo
     Input input;
     while(1){
+        gotoxy(0, 0);
         cout << input.getKey() << " | Last: " << input.getLastKey() << " | Stored: " << input.getStoredKey() <<endl;
         if(input.getStoredKey() == 42) break;
         Sleep(100);
