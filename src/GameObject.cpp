@@ -42,3 +42,6 @@ bool GameObject::isCollision(){
 void GameObject::setCollision(bool state){
     this->collision = state;
 }
+void GameObject::setMoved(bool state){
+    this->posChanged = state;
+}

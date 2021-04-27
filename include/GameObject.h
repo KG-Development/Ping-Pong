@@ -26,6 +26,8 @@ class GameObject {
         bool isCollision();
 
         void setCollision(bool state);
+        void setMoved(bool state);
+
         Vector2d position;
 
     private:
