@@ -10,6 +10,7 @@ GameObject::GameObject(char sign, Vector2d vec, int length, int width, bool coll
     this->width = width;
     this->collision = collision;
 }
+
 Vector2d GameObject::getPosition(){
     return this->position;
 }
