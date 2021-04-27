@@ -19,7 +19,7 @@ class Field {
 
     private:
         void setBigObject(GameObject obj);
-        char field[MAXY][MAXX];
+        GameObject field[MAXY][MAXX];
 };
 
 #endif // FIELD_H

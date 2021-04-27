@@ -23,6 +23,9 @@ class GameObject {
         int getPrevY();
 
         bool isPosChanged();
+        void changePosX();
+        void changePosY();
+
         Vector2d position;
 
     private:
