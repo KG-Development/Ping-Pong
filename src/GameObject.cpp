@@ -46,3 +46,15 @@ void GameObject::setCollision(bool state){
 void GameObject::setMoved(bool state){
     this->posChanged = state;
 }
+
+void GameObject::setPrevX(int x) {
+    this->prevPosition.setX(x);
+}
+
+void GameObject::setPrevY(int y) {
+    this->prevPosition.setY(y);
+}
+
+void GameObject::setPrevPosition(Vector2d vec) {
+    this->prevPosition = vec;
+}

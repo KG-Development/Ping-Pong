@@ -15,7 +15,7 @@ char Input::getKey(){
     if(kbhit()){
         this->lastSign = this->key;
         this->key = getch();
-        return key;
+        return this->key;
     }
     return -1;
 

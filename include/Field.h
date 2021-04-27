@@ -5,8 +5,8 @@
 
 #include "GameObject.h"
 
-const int MAXX = 50;
-const int MAXY = 25;
+const int MAXX = 100;
+const int MAXY = 46;
 
 class Field {
     public:

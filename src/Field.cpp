@@ -25,6 +25,7 @@ void Field::setObjectAtPosition(GameObject &obj) {
     if (obj.isPosChanged()) {
         this->field[obj.getPrevY()][obj.getPrevX()] = objDummy;
         this->field[obj.getY()][obj.getX()].setMoved(false);
+        obj.setPrevPosition(obj.position);
     }
 }
 

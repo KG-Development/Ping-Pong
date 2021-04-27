@@ -22,6 +22,11 @@ class GameObject {
         int getPrevX();
         int getPrevY();
 
+        void setPrevPosition(Vector2d vec);
+
+        void setPrevX(int x);
+        void setPrevY(int y);
+
         bool isPosChanged();
         bool isCollision();
 
