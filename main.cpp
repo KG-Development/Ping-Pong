@@ -2,10 +2,13 @@
 #include "GameObject.h"
 #include "Vector.h"
 #include "Field.h"
+#include "Input.h"
+#include <windows.h>
 
 using namespace std;
 
 int main(){
+
     Field field;
     GameObject objPlayerLeft('#', Vector2d(2, 5, 0.3), 15, 2, false);
     GameObject objBall('O', Vector2d(25, 12, 2), 1, 1, false);
@@ -18,4 +21,13 @@ int main(){
     field.printField();
 
     //vec.print();
+
+    //Demo
+    Input input;
+    while(1){
+        cout << input.getKey() << " | Last: " << input.getLastKey() << " | Stored: " << input.getStoredKey() <<endl;
+        if(input.getStoredKey() == 42) break;
+        Sleep(100);
+    }
+
 }
