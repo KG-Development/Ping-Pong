@@ -10,7 +10,7 @@ class GameObject {
         int length;
         int width;
 
-        GameObject(char sign, Vector2d pos, int length, int width);
+        GameObject(char sign, Vector2d pos, int length, int width, bool collision);
         GameObject(){}
         Vector2d getPosition();
 
@@ -23,11 +23,14 @@ class GameObject {
         int getPrevY();
 
         bool isPosChanged();
+        bool isCollision();
+
+        void setCollision(bool state);
         Vector2d position;
 
     private:
         bool posChanged;
-
+        bool collision;
         char sign;
         //Vector2d position;
         Vector2d prevPosition;
