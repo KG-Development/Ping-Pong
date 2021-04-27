@@ -43,3 +43,13 @@
   </body>
 </html>
 
+<<<<<<< HEAD
+=======
+
+
+## What is working right now?
+* basic I/O
+* basic playing field
+* basic render engine
+* basic game loop
+>>>>>>> parent of 8c9f19b (Update README.md)
