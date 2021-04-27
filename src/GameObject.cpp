@@ -1,13 +1,14 @@
 #include "GameObject.h"
 #include "Vector.h"
 
-GameObject::GameObject(char sign, Vector2d vec, int length, int width){
+GameObject::GameObject(char sign, Vector2d vec, int length, int width, bool collision){
     this->position = vec;
     this->sign = sign;
     this->prevPosition = vec;
     this->posChanged = false;
     this->length = length;
     this->width = width;
+    this->collision = collision;
 }
 
 Vector2d GameObject::getPosition(){
@@ -35,4 +36,10 @@ int GameObject::getPrevY() {
 
 bool GameObject::isPosChanged() {
     return this->posChanged;
+}
+bool GameObject::isCollision(){
+    return this->collision;
+}
+void GameObject::setCollision(bool state){
+    this->collision = state;
 }
