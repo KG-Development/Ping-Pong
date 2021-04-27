@@ -2,7 +2,7 @@
 #include <iostream>
 
 Field::Field() {
-    GameObject obj('0', Vector2d(0, 0, 0.0), 0, 0);
+    GameObject obj('0', Vector2d(0, 0, 0.0), 0, 0, false);
     for (int i = 0; i < MAXY; ++i) {
         for (int j = 0; j < MAXX; ++j) {
             field[i][j] = obj;
@@ -15,7 +15,7 @@ Field::~Field() {
 }
 
 void Field::setObjectAtPosition(GameObject &obj) {
-    GameObject objDummy('0', Vector2d(0, 0, 0.0), 0, 0);
+    GameObject objDummy('0', Vector2d(0, 0, 0.0), 0, 0, false);
 
     if (obj.length > 1 || obj.width > 1) {
         this->setBigObject(obj);
