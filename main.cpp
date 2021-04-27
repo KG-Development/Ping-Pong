@@ -15,6 +15,9 @@ int main(){
     field.setObjectAtPosition(objBall);
     field.setObjectAtPosition(objPlayerRight);
 
+    field.gameObjectMove(Vector2d(1, 1, 0.0), objBall);
+    field.setObjectAtPosition(objBall);
+
     field.printField();
 
     //vec.print();

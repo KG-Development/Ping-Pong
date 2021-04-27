@@ -24,6 +24,7 @@ void Field::setObjectAtPosition(GameObject &obj) {
     this->field[obj.getY()][obj.getX()] = obj;
     if (obj.isPosChanged()) {
         this->field[obj.getPrevY()][obj.getPrevX()] = objDummy;
+        this->field[obj.getY()][obj.getX()].setMoved(false);
     }
 }
 
@@ -50,5 +51,23 @@ void Field::setBigObject(GameObject obj) {
         }
         obj.position.setY(obj.getY() + 1);
         obj.position.setX(x);
+    }
+}
+
+void Field::gameObjectMove(Vector2d moveVec, GameObject &obj) {
+    bool alreadyMoved = false;
+
+    for (int i = 0; i < MAXY; ++i) {
+        for (int j = 0; j < MAXX; ++j) {
+            if (obj.getX() == j && obj.getY() == i) {
+                obj.position = Vector2d_add(obj.position, moveVec);
+                obj.setMoved(true);
+                this->field[obj.getY()][obj.getX()] = obj;
+
+                alreadyMoved = true;
+                break;
+            }
+        }
+        if (alreadyMoved) break;
     }
 }

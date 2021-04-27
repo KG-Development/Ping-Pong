@@ -15,6 +15,9 @@ class Field {
 
         void setObjectAtPosition(GameObject &obj);
         void printField();
+
+        void gameObjectMove(Vector2d moveVec, GameObject &obj);
+
     protected:
 
     private:
