@@ -8,5 +8,7 @@ Pong made by Gabriel and me, we are programming it in our free time. Just to mak
 
 * Basic I/O
 * Basic playing field
+* functioning random ball movement 
+* functioning collision detection
 * Basic render engine
 * Basic game loop
