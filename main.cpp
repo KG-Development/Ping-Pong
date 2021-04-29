@@ -13,12 +13,12 @@ void hidecursor();
 int main(){
 
     Field field;
-    GameObject objPlayerLeft('#', Vector2d(2, 16, 0.3), 15, 2, false);
-    GameObject objBall('O', Vector2d(50, 23, 2), 1, 1, false);
-    GameObject objPlayerRight('#', Vector2d(95, 16, 0.3), 15, 2, false);
+    GameObject objPlayerLeft('#', Vector2d(2, 16, 0.3), 15, 2, true);
+    GameObject objBall('O', Vector2d(50, 23, 2), 1, 1, true);
+    GameObject objPlayerRight('#', Vector2d(95, 16, 0.3), 15, 2, true);
 
-    GameObject upperLine('=', Vector2d(0, 0, 0.0), 1, MAXX - 1, false);
-    GameObject downLine('=', Vector2d(0, MAXY - 1, 0.0), 1, MAXX - 1, false);
+    GameObject upperLine('=', Vector2d(0, 0, 0.0), 1, MAXX - 1, true);
+    GameObject downLine('=', Vector2d(0, MAXY - 1, 0.0), 1, MAXX - 1, true);
     GameObject rightLine('|', Vector2d(MAXX - 1, 0, 0.0), MAXY, 1, false);
     GameObject leftLine('|', Vector2d(0, 0, 0.0), MAXY, 1, false);
 

@@ -14,6 +14,13 @@ Field::~Field() {
     //dtor
 }
 
+bool Field::isColliding(GameObject &obj, Vector2d movePos){
+
+    GameObject temp = field[obj.getY() + movePos.getY()][obj.getX() + movePos.getX()];
+    if(temp.isCollision()) return true;
+
+    return false;
+}
 void Field::setObjectAtPosition(GameObject &obj) {
     GameObject objDummy('0', Vector2d(0, 0, 0.0), 0, 0, false);
 
@@ -61,6 +68,11 @@ void Field::gameObjectMove(Vector2d moveVec, GameObject &obj) {
     for (int i = 0; i < MAXY; ++i) {
         for (int j = 0; j < MAXX; ++j) {
             if (obj.getX() == j && obj.getY() == i) {
+                if(isColliding(obj, moveVec)){
+                    moveVec.reverseX();
+                    moveVec.reverseY();
+                    std::cout << "Collision: " << isColliding(obj, moveVec);
+                }
                 obj.position = Vector2d_add(obj.position, moveVec);
                 obj.setMoved(true);
                 this->field[obj.getY()][obj.getX()] = obj;
