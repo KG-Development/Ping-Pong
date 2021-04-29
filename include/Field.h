@@ -17,6 +17,7 @@ class Field {
         void printField();
 
         void gameObjectMove(Vector2d &moveVec, GameObject &obj);
+        void moveBigObject(Vector2d moveVec, GameObject &obj);
 
 
     protected:

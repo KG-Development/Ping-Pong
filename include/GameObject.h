@@ -39,7 +39,6 @@ class GameObject {
         bool posChanged;
         bool collision;
         char sign;
-        //Vector2d position;
         Vector2d prevPosition;
 };
 

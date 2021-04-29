@@ -13,9 +13,9 @@ void hidecursor();
 
 int main(){
     Field field;
-    GameObject objPlayerLeft('#', Vector2d(2, 16, 0.3), 15, 2, true);
+    GameObject objPlayerLeft('#', Vector2d(2, 23, 0.3), 15, 2, true);
     GameObject objBall('O', Vector2d(50, 23, 2), 1, 1, true);
-    GameObject objPlayerRight('#', Vector2d(95, 16, 0.3), 15, 2, true);
+    GameObject objPlayerRight('#', Vector2d(95, 23, 0.3), 15, 2, true);
 
     GameObject upperLine('=', Vector2d(0, 0, 0.0), 1, MAXX - 1, true);
     GameObject downLine('=', Vector2d(0, MAXY - 1, 0.0), 1, MAXX - 1, true);
@@ -59,6 +59,15 @@ int main(){
         }
         field.gameObjectMove(vecs[idx], objBall);
         field.setObjectAtPosition(objBall);
+
+        if (input.getKey() == 'w') {
+            field.moveBigObject(Vector2d(0, -1, 0.0), objPlayerLeft);
+            field.setObjectAtPosition(objPlayerLeft);
+        }
+        if (input.getKey() == 's') {
+            field.moveBigObject(Vector2d(0, 1, 0.0), objPlayerLeft);
+            field.setObjectAtPosition(objPlayerLeft);
+        }
 
         field.printField();
         cout << endl << input.getKey() << " | Last: " << input.getLastKey() << " | Stored: " << input.getStoredKey() <<endl;
