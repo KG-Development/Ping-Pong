@@ -16,14 +16,14 @@ class Field {
         void setObjectAtPosition(GameObject &obj);
         void printField();
 
-        void gameObjectMove(Vector2d moveVec, GameObject &obj);
+        void gameObjectMove(Vector2d &moveVec, GameObject &obj);
 
 
     protected:
 
     private:
         void setBigObject(GameObject obj);
-        bool isColliding(GameObject &obj, Vector2d movePos);
+        int isColliding(GameObject &obj, Vector2d movePos);
         GameObject field[MAXY][MAXX];
 };
 

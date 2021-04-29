@@ -5,13 +5,13 @@
 #include "Input.h"
 #include <windows.h>
 #include "myconio.h"
+#include <time.h>
 
 using namespace std;
 
 void hidecursor();
 
 int main(){
-
     Field field;
     GameObject objPlayerLeft('#', Vector2d(2, 16, 0.3), 15, 2, true);
     GameObject objBall('O', Vector2d(50, 23, 2), 1, 1, true);
@@ -19,8 +19,8 @@ int main(){
 
     GameObject upperLine('=', Vector2d(0, 0, 0.0), 1, MAXX - 1, true);
     GameObject downLine('=', Vector2d(0, MAXY - 1, 0.0), 1, MAXX - 1, true);
-    GameObject rightLine('|', Vector2d(MAXX - 1, 0, 0.0), MAXY, 1, false);
-    GameObject leftLine('|', Vector2d(0, 0, 0.0), MAXY, 1, false);
+    GameObject rightLine('|', Vector2d(MAXX - 1, 0, 0.0), MAXY, 1, true);
+    GameObject leftLine('|', Vector2d(0, 0, 0.0), MAXY, 1, true);
 
     field.setObjectAtPosition(objPlayerLeft);
     field.setObjectAtPosition(objBall);
@@ -38,30 +38,31 @@ int main(){
 
     //Demo
     Input input;
+
+    Vector2d vecs[4] = {
+        Vector2d(-1, 1, 0.0),
+        Vector2d(1, -1, 0.0),
+        Vector2d(-1, -1, 0.0),
+        Vector2d(1, 1, 0.0)
+    };
+
+    int once = 0, idx;
+
     while(1){
         gotoxy(0, 0);
-        //cout << input.getKey() << " | Last: " << input.getLastKey() << " | Stored: " << input.getStoredKey() <<endl;
         if(input.getStoredKey() == 42) break;
 
-        if (input.getStoredKey() == 'a') {
-            field.gameObjectMove(Vector2d(-1, 0, 0.0), objBall);
-            field.setObjectAtPosition(objBall);
+        if (!once) {
+            srand(time(NULL));
+            idx = rand() % 4;
+            once = 1;
         }
-        if (input.getStoredKey() == 'd') {
-            field.gameObjectMove(Vector2d(1, 0, 0.0), objBall);
-            field.setObjectAtPosition(objBall);
-        }
-        if (input.getStoredKey() == 'w') {
-            field.gameObjectMove(Vector2d(0, -1, 0.0), objBall);
-            field.setObjectAtPosition(objBall);
-        }
-        if (input.getStoredKey() == 's') {
-            field.gameObjectMove(Vector2d(0, 1, 0.0), objBall);
-            field.setObjectAtPosition(objBall);
-        }
+        field.gameObjectMove(vecs[idx], objBall);
+        field.setObjectAtPosition(objBall);
+
         field.printField();
         cout << endl << input.getKey() << " | Last: " << input.getLastKey() << " | Stored: " << input.getStoredKey() <<endl;
-        //Sleep(50);
+        Sleep(10);
     }
 
 }

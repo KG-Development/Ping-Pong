@@ -15,12 +15,16 @@ class Vector2d {
         int getY();
         float getVelocity();
 
+        void setAll(int x, int y, int vel);
+
         void setX(int x);
         void setY(int y);
         void setVelocity(float vel);
 
         void reverseX();
         void reverseY();
+
+        void setNull();
 
         void print();
 

@@ -57,3 +57,15 @@ void Vector2d::reverseX() {
 void Vector2d::reverseY() {
     this->y *= -1;
 }
+
+void Vector2d::setNull() {
+    this->x = 0;
+    this->y = 0;
+    this->velocity = 0.0;
+}
+
+void Vector2d::setAll(int x, int y, int vel) {
+    this->x = x;
+    this->y = y;
+    this->velocity = vel;
+}

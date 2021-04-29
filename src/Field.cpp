@@ -14,10 +14,15 @@ Field::~Field() {
     //dtor
 }
 
-bool Field::isColliding(GameObject &obj, Vector2d movePos){
-
+int Field::isColliding(GameObject &obj, Vector2d movePos){
     GameObject temp = field[obj.getY() + movePos.getY()][obj.getX() + movePos.getX()];
-    if(temp.isCollision()) return true;
+    if(temp.isCollision()) {
+        if (field[obj.getY() + movePos.getY()][obj.getX() + movePos.getX()].getSign() == '=') {
+            return 1;
+        }else {
+            return 2;
+        }
+    };
 
     return false;
 }
@@ -62,16 +67,21 @@ void Field::setBigObject(GameObject obj) {
     }
 }
 
-void Field::gameObjectMove(Vector2d moveVec, GameObject &obj) {
+void Field::gameObjectMove(Vector2d &moveVec, GameObject &obj) {
     bool alreadyMoved = false;
+    int coll = 0;
 
     for (int i = 0; i < MAXY; ++i) {
         for (int j = 0; j < MAXX; ++j) {
             if (obj.getX() == j && obj.getY() == i) {
-                if(isColliding(obj, moveVec)){
-                    moveVec.reverseX();
-                    moveVec.reverseY();
-                    std::cout << "Collision: " << isColliding(obj, moveVec);
+                if((coll = isColliding(obj, moveVec))) {
+                    if (coll == 1) {
+                        moveVec.reverseY();
+                    }
+                    if (coll == 2) {
+                        moveVec.reverseX();
+                    }
+                    //std::cout << "Collision: " << isColliding(obj, moveVec);
                 }
                 obj.position = Vector2d_add(obj.position, moveVec);
                 obj.setMoved(true);
